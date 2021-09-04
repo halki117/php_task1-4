@@ -13,7 +13,7 @@ if ($_POST["token"] == $_SESSION["token"])
   $player_select = $select_array[(int)$_POST['select']];
   
   // 相手の出し手を決める(randで0〜2の間でランダムな数値を出るようにする。)
-  $npm_select = $select_array[rand(0,2)];
+  $npc_select = $select_array[rand(0,2)];
 }
 
 $_SESSION['token'] = mt_rand();
@@ -44,12 +44,12 @@ $token = $_SESSION['token'];
   <p><?php echo "自分:".$player_select; ?></p>
 
   <!-- 相手の出し手表示 -->
-  <p><?php echo "相手:".$npm_select; ?></p>
+  <p><?php echo "相手:".$npc_select; ?></p>
   
   <!-- 結果表示 -->
   <?php 
   if ($player_select == 'グー') {
-    switch ($npm_select) {
+    switch ($npc_select) {
         case 'チョキ':
             echo "あなたの勝利です！";
             break;
@@ -61,7 +61,7 @@ $token = $_SESSION['token'];
             break;
     } 
   } elseif ( $player_select == 'チョキ') {
-    switch ($npm_select) {
+    switch ($npc_select) {
       case 'パー':
           echo "あなたの勝利です！";
           break;
@@ -73,7 +73,7 @@ $token = $_SESSION['token'];
           break;
     } 
   } elseif($player_select == 'パー') {
-    switch ($npm_select) {
+    switch ($npc_select) {
       case 'グー':
           echo "あなたの勝利です！";
           break;
