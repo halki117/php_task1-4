@@ -48,7 +48,7 @@ $token = $_SESSION['token'];
   
   <!-- 結果表示 -->
   <?php 
-  if ($player_select == 'グー') {
+  if ($player_select === 'グー') {
     switch ($npc_select) {
         case 'チョキ':
             echo "あなたの勝利です！";
@@ -60,7 +60,7 @@ $token = $_SESSION['token'];
             echo "あなたの敗北です。。";
             break;
     } 
-  } elseif ( $player_select == 'チョキ') {
+  } elseif ( $player_select === 'チョキ') {
     switch ($npc_select) {
       case 'パー':
           echo "あなたの勝利です！";
@@ -72,7 +72,7 @@ $token = $_SESSION['token'];
           echo "あなたの敗北です。。";
           break;
     } 
-  } elseif($player_select == 'パー') {
+  } elseif($player_select === 'パー') {
     switch ($npc_select) {
       case 'グー':
           echo "あなたの勝利です！";
